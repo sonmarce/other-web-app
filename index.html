@@ -38,17 +38,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur
 </head>
 <body>
 <script>
-_gaq.push(['_trackEvent', 'Global', 'None', 'Nothing']);
+ga('send', 'event', 'Global', 'None', 'Nothing');
 </script>
 <h1>Yuju</h1>
-<a href="#" onClick="_gaq.push(['_trackEvent', 'Links', 'Click', 'Nowhere']);">Go to nowhere.</a><br/>
-<a href="./another.html" onClick="_gaq.push(['_trackEvent', 'Links', 'Click', 'Another place']);">Go to another place.</a><br/>
+<a href="#" onClick="ga('send', 'event', 'Links', 'Click', 'Nowhere');">Go to nowhere (event).</a><br/>
+<a href="./another.html" onClick="ga('send', 'event', 'Links', 'Click', 'Another place');">Go to another place (event).</a><br/>
 <a href="./another-one.html">Go to another more place.</a><br/>
 <a href="./moremore.html">More things.</a><br/>
 <a href="./blip.html">Blip.</a><br/>
 <a href="http://crossorigin.me">Cool link!</a><br>
-<a href="http://www.domain.com/offsite-application.html" onclick="_gaq.push(['_trackEvent', 'outbound', 'click', 'Application Link']);">Apply Now</a><br>
-<a href="http://www.domain.com/offsite-application.html" onclick="ga('send', 'event', 'GA-outbound', 'GA-click', 'GA Application Link');">GA Apply Now</a><br>
+<a href="http://www.domain.com/offsite-application.html" onclick="ga('send', 'event', 'outbound', 'click', 'Application Link');">Apply Now (event)</a><br>
 <p>Lorem ipsum bla bla bla...</p>
 <p>Lorem ipsum bla bla bla...</p>
 </body>
