@@ -77,9 +77,15 @@ sendEvent('Global', 'None', 'Nothing');
 <p>Lorem ipsum bla bla bla...</p>
 <script>
 var elt;
-elt= document.createElement("h2");
+elt= document.createElement("br");
+document.body.appendChild(elt);
+elt= document.createElement("h3");
 elt.id= "Feedback";
 elt.innerHTML = 'Feedback= ' + FeedbackEnabled;
+document.body.appendChild(elt);
+elt= document.createElement("h3");
+elt.id= "Statistics";
+elt.innerHTML = 'Statistics= ' +StatisticsEnabled;
 document.body.appendChild(elt);
 </script>
 </body>
