@@ -14,7 +14,13 @@ if (getURLParameter('disable-statistics') != null) { StatisticsEnabled= false; }
 </script>
 <!-- This is just for using UserReport to get user feedback --!>
 <script type="text/javascript">
-if (FeedbackEnabled) 
+if (FeedbackEnabled) {
+  var _urq = _urq || [];
+  _urq.push(['initSite', '20397a8d-bb89-4a80-82c4-110e800c9de4']);
+  (function() {
+  var ur = document.createElement('script'); ur.type = 'text/javascript'; ur.async = true;
+  ur.src = ('https:' == document.location.protocol ? 'https://cdn.userreport.com/userreport.js' : 'http://cdn.userreport.com/userreport.js');
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
   })();
 }
 </script>
