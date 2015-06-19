@@ -76,7 +76,11 @@ sendEvent('Global', 'None', 'Nothing');
 <p>Lorem ipsum bla bla bla...</p>
 <p>Lorem ipsum bla bla bla...</p>
 <script>
-document.body.appendChild('<br><h2>Feedback= ' + FeedbackEnabled + '</h2>');
+var elt;
+elt= document.createElement("h2");
+elt.id= "Feedback";
+elt.innerHTML = 'Feedback= ' + FeedbackEnabled);
+document.body.appendChild(elt);
 </script>
 </body>
 </html>
