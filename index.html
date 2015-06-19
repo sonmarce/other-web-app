@@ -12,7 +12,7 @@ var StatisticsEnabled= true;
 
 if (getURLParameter('feedback') == 'false') {
   FeedbackEnabled= false;
-  document.getElementById("body").appendChild('<br><h2>Feedback is disabled</h2>');
+  document.getElementById("body").innerHTML= '<br><h2>Feedback is disabled</h2>';
 }
 
 if (getURLParameter('statistics') == 'false') {
