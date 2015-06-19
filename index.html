@@ -23,10 +23,20 @@ if (FeedbackEnabled) {
   ur.src = ('https:' == document.location.protocol ? 'https://cdn.userreport.com/userreport.js' : 'http://cdn.userreport.com/userreport.js');
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
   })();
+
+  function sendEvent (category, action, label) {
+    ga('send', 'event', categoty, action, label);
+  }
+}
+else {
+  function sendEvent (category, action, label) {
+    /* Do not send event as statistics are disabled */
+  }
 }
 </script>
 <!-- This is just for using Google Analytics to collect events --!>
 <script>
+if (StatisticsEnabled) {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -34,6 +44,7 @@ if (FeedbackEnabled) {
 
   ga('create', 'UA-63872267-2', 'auto');
   ga('send', 'pageview');
+}
 </script>
 <!-- This is just for using Piwik to collect events --!>
 <script type="text/javascript">
@@ -52,16 +63,16 @@ if (FeedbackEnabled) {
 </head>
 <body>
 <script>
-ga('send', 'event', 'Global', 'None', 'Nothing');
+sendEvent('Global', 'None', 'Nothing');
 </script>
 <h1>Yuju</h1>
-<a href="#" onClick="ga('send', 'event', 'Links', 'Click', 'Nowhere');">Go to nowhere (event).</a><br/>
-<a href="./another.html" onClick="ga('send', 'event', 'Links', 'Click', 'Another place');">Go to another place (event).</a><br/>
+<a href="#" onClick="sendEvent('Links', 'Click', 'Nowhere');">Go to nowhere (event).</a><br/>
+<a href="./another.html" onClick="sendEvent('Links', 'Click', 'Another place');">Go to another place (event).</a><br/>
 <a href="./another-one.html">Go to another more place.</a><br/>
 <a href="./moremore.html">More things.</a><br/>
 <a href="./blip.html">Blip.</a><br/>
 <a href="http://crossorigin.me">Cool link!</a><br>
-<a href="http://www.domain.com/offsite-application.html" onclick="ga('send', 'event', 'outbound', 'click', 'Application Link');">Apply Now (event)</a><br>
+<a href="http://www.domain.com/offsite-application.html" onclick="sendEvent('outbound', 'click', 'Application Link');">Apply Now (event)</a><br>
 <p>Lorem ipsum bla bla bla...</p>
 <p>Lorem ipsum bla bla bla...</p>
 </body>
