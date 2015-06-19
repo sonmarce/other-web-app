@@ -10,15 +10,8 @@ function getURLParameter (name) {
 var FeedbackEnabled=   true;
 var StatisticsEnabled= true;
 
-if (getURLParameter('feedback') == 'false') {
-  FeedbackEnabled= false;
-  document.getElementById("body").innerHTML= '<br><h2>Feedback is disabled</h2>';
-}
-
-if (getURLParameter('statistics') == 'false') {
-  StatisticsEnabled= false;
-  document.getElementById("body").appendChild('<br><h2>Statistics are disabled</h2>');
-}
+if (getURLParameter('feedback')   == 'false') { FeedbackEnabled=   false; }
+if (getURLParameter('statistics') == 'false') { StatisticsEnabled= false; }
 </script>
 <!-- This is just for using UserReport to get user feedback --!>
 <script type="text/javascript">
@@ -82,5 +75,8 @@ sendEvent('Global', 'None', 'Nothing');
 <a href="http://www.domain.com/offsite-application.html" onclick="sendEvent('outbound', 'click', 'Application Link');">Apply Now (event)</a><br>
 <p>Lorem ipsum bla bla bla...</p>
 <p>Lorem ipsum bla bla bla...</p>
+<script>
+document.getElementById("body").innerHTML= '<br><h2>Feedback= ' + FeedbackEnabled' + '</h2>';
+</script>
 </body>
 </html>
