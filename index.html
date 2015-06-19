@@ -2,8 +2,9 @@
 <head>
 <!-- This is just to get initial configuration from URL parameters --!>
 <script>
-function getURLParameter(name) {
-  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+function getURLParameter (name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
 var FeedbackEnabled= true;
