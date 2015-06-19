@@ -7,11 +7,11 @@ function getURLParameter (name) {
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
-var FeedbackEnabled= true;
+var FeedbackEnabled=   true;
 var StatisticsEnabled= true;
 
-if (getURLParameter('disable-feedback')   != null) { FeedbackEnabled= false; }
-if (getURLParameter('disable-statistics') != null) { StatisticsEnabled= false; }
+if (getURLParameter('feedback')   == 'false') { FeedbackEnabled=   false; }
+if (getURLParameter('statistics') == 'false') { StatisticsEnabled= false; }
 </script>
 <!-- This is just for using UserReport to get user feedback --!>
 <script type="text/javascript">
