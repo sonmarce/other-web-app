@@ -10,8 +10,15 @@ function getURLParameter (name) {
 var FeedbackEnabled=   true;
 var StatisticsEnabled= true;
 
-if (getURLParameter('feedback')   == 'false') { FeedbackEnabled=   false; }
-if (getURLParameter('statistics') == 'false') { StatisticsEnabled= false; }
+if (getURLParameter('feedback') == 'false') {
+  FeedbackEnabled= false;
+  document.getElementById("body").appendChild('<br><h2>Feedback is disabled</h2>');
+}
+
+if (getURLParameter('statistics') == 'false') {
+  StatisticsEnabled= false;
+  document.getElementById("body").appendChild('<br><h2>Statistics are disabled</h2>');
+}
 </script>
 <!-- This is just for using UserReport to get user feedback --!>
 <script type="text/javascript">
