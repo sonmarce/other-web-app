@@ -28,7 +28,7 @@ if (FeedbackEnabled) {
 
 function sendEvent(category, action, label) {
   if (FeedbackEnabled) {
-    ga('send', 'event', categoty, action, label);
+    ga('send', 'event', category, action, label);
   }
 }
 </script>
@@ -66,7 +66,6 @@ sendEvent('Global', 'None', 'Nothing');
 <h1>Yuju</h1>
 <a href="#" onClick="sendEvent('Links', 'Click', 'Nowhere');">Go to nowhere (event).</a><br/>
 <a href="./another.html" onClick="sendEvent('Links', 'Click', 'Another place');">Go to another place (event).</a><br/>
-<a href="./another.html" onClick="ga('send', 'event', 'Link2', 'Click2', 'Another place 2');">Go to another place (event2).</a><br/>
 <a href="./another-one.html">Go to another more place.</a><br/>
 <a href="./moremore.html">More things.</a><br/>
 <a href="./blip.html">Blip.</a><br/>
