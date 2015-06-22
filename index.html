@@ -24,13 +24,11 @@ if (FeedbackEnabled) {
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
   })();
 
-  function sendEvent (category, action, label) {
-    ga('send', 'event', categoty, action, label);
-  }
 }
-else {
-  function sendEvent (category, action, label) {
-    /* Do not send event as statistics are disabled */
+
+function sendEvent(category, action, label) {
+  if (FeedbackEnabled) {
+    ga('send', 'event', categoty, action, label);
   }
 }
 </script>
